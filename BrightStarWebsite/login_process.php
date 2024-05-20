@@ -13,13 +13,13 @@
     // Kiểm tra xem có dòng dữ liệu nào trả về hay không
     if(mysqli_num_rows($result) > 0) {
         // Nếu có, đăng nhập thành công
-        header("Location: home.php");
+        header("Location: home.html");
         exit();
     } else {
         // Nếu không, hiển thị thông báo lỗi
         echo "<script>
                 alert('Sai tên tài khoản hoặc mật khẩu!');
-                window.location.href = 'login.php'; // Chuyển hướng người dùng trở lại trang đăng nhập
+                window.location.href = 'login.html'; // Chuyển hướng người dùng trở lại trang đăng nhập
             </script>";
         exit();
     }
