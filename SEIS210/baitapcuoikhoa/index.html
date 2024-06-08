@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký Khóa Học</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .star-rating {
+            direction: rtl;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            font-size: 2em;
+            color: #dddddd;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .star-rating input:checked ~ label {
+            color: #ffc700;
+        }
+        .star-rating input:hover ~ label,
+        .star-rating input:focus ~ label {
+            color: #ffda44;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buttons button[type="submit"] {
+            background-color: #28a745;
+            color: #ffffff;
+        }
+        .buttons button[type="reset"] {
+            background-color: #dc3545;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Form Đăng Ký Khóa Học</h2>
+        <form>
+            <h3>Thông tin cơ bản của học viên</h3>
+            <label for="name">Họ và tên học viên:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="dob">Ngày sinh:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="phone">Số điện thoại học viên:</label>
+            <input type="tel" id="phone" name="phone" pattern="0[0-9]{9,10}" required>
+
+            <label for="email">Địa chỉ email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <h3>Thông tin khóa học đăng ký</h3>
+            <label for="course">Tên khóa học:</label>
+            <select id="course" name="course" required>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+            </select>
+
+            <label for="time">Thời gian học:</label>
+            <select id="time" name="time" required>
+                <option value="Sáng">Sáng</option>
+                <option value="Chiều">Chiều</option>
+                <option value="Tối">Tối</option>
+            </select>
+
+            <label for="mode">Hình thức học:</label>
+            <select id="mode" name="mode" required>
+                <option value="Trực tuyến">Trực tuyến</option>
+                <option value="Trực tiếp tại trung tâm">Trực tiếp tại trung tâm</option>
+            </select>
+
+            <label for="start-date">Ngày bắt đầu:</label>
+            <input type="date" id="start-date" name="start-date" required>
+
+            <label for="notes">Ghi chú thêm:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+
+            <h3>Đánh giá và phản hồi</h3>
+            <label>Đánh giá sơ bộ khóa học:</label>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4" required><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3" required><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2" required><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1" required><label for="star1">★</label>
+            </div>
+
+            <label for="feedback">Ý kiến, đóng góp:</label>
+            <textarea id="feedback" name="feedback" rows="4"></textarea>
+
+            <div class="buttons">
+                <button type="submit">Gửi</button>
+                <button type="reset">Xóa</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
